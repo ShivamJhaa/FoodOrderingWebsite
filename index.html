@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Khana Khazana</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="scss/font-awesome.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
+     <link rel="manifest" href="favicon/site.webmanifest">
+
+</head>
+<body>
+  <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top"> 
+        <div class="container">
+          <a class="navbar-brand" href="#"><div class="logo" style="font-size: 150%; font-family: 'Raleway';font-weight: 700; color: #fff;">Khana Khazana</div></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">Sign-up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              
+            </ul>
+            <button type="button" class="rounded-pill btn-rounded">Order Now
+              <span><i class="fas fa-phone-alt"></i></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!--Intro-section-->
+      <section id="home" class="intro-section">
+        <div class="container">
+          <div class="row align-items-center text-white">
+            <div class="col-md-6 intros">
+              <h1 class="display-2">
+                <span class="display-2--intro">
+                 Eat and Enjoy the true taste
+                </span>
+                <span class="display-2--description lh-base">
+                  We believe good food offer great smile,
+                  <br>You can order your food online or on call<br><br><br><br>
+                  **Free Home Delivery
+              </h1>
+              <button type="button" class="rounded-pill btn-rounded">Order Now
+                <span><i class="fas fa-arrow-right"></i></span>
+              </button>
+            </div>
+            <!--Video-->
+            <div class="col-md-6 intros text-end">
+              <div class="video-box">
+                <img src="https://www.transparentpng.com/thumb/food/Ha2HDD-food-cut-out-png.png" alt="food cut out png @transparentpng.com" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,96C672,75,768,85,864,117.3C960,149,1056,203,1152,197.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+      </section>
+
+
+      <!--Menu-->
+      <section id="menu">
+        <div class="container">
+          <div class="row text-center">
+            <h1 class="display-5 fw-bold mb-1">Our Menu</h1>
+            <div class="heading-line mb-1"></div>
+            <div class="row">
+              <div class="col">
+                <button class="all" id="port-btn" data-id="all">ALL</button>
+                  <button class="H1" id="port-btn" data-id="H1">HALL 1</button>
+                  <button class="H2" id="port-btn" data-id="H2">HALL 2</button>
+                  <button class="H3" id="port-btn" data-id="H3">HALL 3</button>
+              </div>
+          </div>
+          <div  class="container">
+              <div class="wrapper" id="projects">
+                  
+              </div>
+
+          </div>
+              
+          </div>
+          </div>
+        </div>
+      </section>
+     
+      <!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 5 - THE TESTIMONIALS  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="testimonials" class="testimonials">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  <div class="container">
+    <div class="row text-center text-white">
+      <h1 class="display-5 fw-bold">Our Reviews</h1>
+      <hr style="width: 100px; height: 3px; " class="mx-auto">
+      <p class="lead pt-1">What students say about us</p>
+    </div>
+
+    <!-- START THE CAROUSEL CONTENT  -->
+    <div class="row align-items-center">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- CAROUSEL ITEM 1 -->
+          <div class="carousel-item active">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                The food is excellent, generous portions and great prices. The service was fast and friendly. I highly recommended it if you’re in the Wellfleet area.
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="imgs/shivam.png" alt="client-1 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Shivam Jha</h3>
+              <p class="fw-light">B.Tech 2nd Year</p>
+            </div>
+          </div>     
+          <!-- CAROUSEL ITEM 2 -->
+          <div class="carousel-item">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                The most amazing food ever! And also the staff is so nice to everyone. I highly recommend buying food from here. The best pizza ever.
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="imgs/shikhar.png" alt="client-2 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Shikhar Awasthi</h3>
+              <p class="fw-light">P.hd Natural Science</p>
+            </div>
+          </div>     
+          <!-- CAROUSEL ITEM 3 -->
+          <div class="carousel-item">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                This place knows how to satisfy their clients. Always with a super nice mindset. The food is affordably priced, always delicious and clean.
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="imgs/sakyan.png" alt="client-3 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Shakyan Kushwaha</h3>
+              <p class="fw-light">Btech 1st Year</p>
+            </div>
+          </div>     
+          <!-- CAROUSEL ITEM 4 -->
+          <div class="carousel-item">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                The service was way above standard. Jack our server was attentive and didn’t skip a detail. My salad was spectacular! I did order a cannoli with toasted almonds on the ends and highly recommend it. Definitely will make a trip back again.
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="imgs/sarthak.png" alt="client-4 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Sarthak Jain</h3>
+              <p class="fw-light">M.Tech Final Year</p>
+            </div>
+          </div>     
+        </div>
+        <div class="text-center">
+          <button class="btn btn-outline-light fas fa-long-arrow-alt-left" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        </button>
+        <button class="btn btn-outline-light fas fa-long-arrow-alt-right" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+      <!--Form-->
+      <section id="contact" class="get-started mb-5 mt-5">
+        <div class="container">
+          <div class="row text-center">
+            <div class="display-5 fw-bold text-capitalize">
+              Contact Us
+            </div>
+            <div class="heading-line"></div>
+            
+          </div>
+          <!--Forms-->
+      <!-- START THE CTA CONTENT  -->
+    <div class="row text-white">
+      <div class="col-12 col-lg-6 gradient shadow p-3">
+        <div class="cta-info w-100">
+          <h4 class="display-4 fw-bold">Your Review is Appreciated</h4><br>
+          <p class="lh-lg">
+            Hey, thanks for being our customer! Please consider leaving us a review.
+          </p>
+          <h3 class="display-3--brief">Tell us how was the food</h3>
+          <ul class="cta-info__list"><br>
+            <p><i class="fas fa-check"></i>We'll always improve</p><br>
+            <p><i class="fas fa-check"></i>We'll serve the best</p>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 bg-gray shadow p-3">
+        <div class="form w-100 pb-2">
+          <h4 class="display-3--title mb-5">start your project</h4>
+          <form action="#" class="row">
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+            </div>
+            <div class="text-center d-grid mt-1">
+              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
+                submit
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+        </div>
+      </section>
+
+
+      <!--footer-->
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+             <div class="col-md-4 col-lg-4 contact-box mt-1 d-md-block d-lg-flex d-flex">
+              <div class="contact-box__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                  <path d="M15 7a2 2 0 0 1 2 2" />
+                  <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+              </div>
+                <div class="contact-box__info">
+                  <a href="#" class="contact-box__info--title">
+                    +91 8285733037
+                  </a>
+                  <p class="contact-box__info--subtitle">WhatsApp Only</p>
+                </div>
+ 
+             </div>
+              <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                <div class="contact-box__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <polyline points="3 9 12 15 21 9 12 3 3 9" />
+                    <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                    <line x1="3" y1="19" x2="9" y2="13" />
+                    <line x1="15" y1="13" x2="21" y2="19" />
+                  </svg>
+                </div>
+                <div class="contact-box__info">
+                  
+                  <a href="" class="contact-box__info--title">
+                   sssvjha@gmail.com
+                  </a>
+                  <p class="contact-box__info--subtitle">
+                    Expect reply in a day
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                <div class="contact-box__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="18" y1="6" x2="18" y2="6.01" />
+                    <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+                    <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+                    <line x1="9" y1="4" x2="9" y2="17" />
+                    <line x1="15" y1="15" x2="15" y2="20" />
+                  </svg>
+                </div>
+                <div class="contact-box__info">
+                 
+                  <a href="" class="contact-box__info--title">
+                    Noida, INDIA
+                  </a>
+                  <p class="contact-box__info--subtitle">
+                    201304
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="footer-sm" style="background-color: #212121;">
+          <div class="container-fluid">
+            <div class="row py-4 text-center text-white">
+              <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                Connect With Me on Social Media
+              </div>
+              <div class="col-lg-7 col-md-6">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottm pt-5 pb-5">
+          <div class="container">
+            <div class="row text-center text-white">
+              <div class="col-12">
+                <div class="footer-bottom__copyright">
+                  &COPY; Copyright 2021 <a href="#">Created by Shivam Jha</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </footer>
+    <!-- Back to top button -->
+
+    <a href="#" class="shadow btn-primary rounded-circle back-to-top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+      <script src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.boxp{
+    height:100%;
+    width: 100%;
+    margin: 4%;
+}
+#projects{
+    height: 100%;
+    width: auto;
+    margin: 0;
+    margin-top: 2%;
+}
+#pro-img{
+    margin: 0;
+    height: 140px;
+    width: 90%;
+}
+.pro-con{
+    color: #fff;
+    @include gradient;
+    height: auto;
+    width: 90%;
+    font-weight: 200;
+    text-align: left;
+    padding: 5%;
+    margin-left: 5%;
+}
+//Button add to cart
+
+.secondary{
+    border-radius: 5px;
+    background-color: $primary;
+    padding:0 15px;
+    color: $white;
+    border: 1px solid $white;
+
+    &:hover
+    {
+        @include gradient;
+    }
+}

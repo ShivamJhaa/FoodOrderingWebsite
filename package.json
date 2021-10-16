@@ -4,7 +4,7 @@
   "description": "My food ordering Website",
   "main": "index.js",
   "scripts": {
-   "compile:sass":"sass --watch scss:assets/css"
+    "compile:sass": "sass --watch scss:assets/css"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +14,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "autoprefixer": "^10.3.7",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
     "postcss-cli": "^9.0.1"
   }
 }

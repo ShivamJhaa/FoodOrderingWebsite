@@ -5,41 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp-Form</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="scss/font-awesome.scss">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/scss/font-awesome.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body">
+    
     <div class="signForm">
-        <form action="/login" class="form1">
+        <form action="/auth/signup" method="POST" class="form1">
             <h1 class="display-5--title title">Sign Up</h1>
-
-            <div class="inputContainer">
-                <input type="email" class="input" id="email" name="email" required placeholder="a">
-                <label for="" class="label">Email</label>
+             <div class="inputContainer">
+                <input type="text" class="input"  id="name" name="name" required placeholder="a">
+                <label for="name" class="label">Name</label>
             </div>
             <div class="inputContainer">
-                <input type="text" class="input"  id="username" name="username" required placeholder="a">
-                <label for="" class="label">Username</label>
+                <input type="email" class="input" id="email" name="email" required placeholder="a">
+                <label for="email" class="label">Email</label>
+            </div>
+             <div class="inputContainer">
+                <input type="number" class="input"  id="phone" name="phone" required placeholder="a">
+                <label for="phone" class="label">Phone No.</label>
             </div>
             <div class="inputContainer">
                 <input type="password" class="input" id="password" name="password" placeholder="a" required>
-                <label for="" class="label">Password</label>
+                <label for="password" class="label">Password</label>
             </div>
             <div class="inputContainer">
                 <input type="password" class="input" id="cpassword" name="cpassword" placeholder="a" required>
-                <label for="" class="label">Confirm Password</label>
+                <label for="cpassword" class="label">Confirm Password</label>
             </div>
+              {{#if message }}
+            {{message}}
+            {{/if}}
+            <br>
+             
+            
 
-            <p>Already have an Account <a href="login.html">Login</a></p>
+            <p>Already have an Account <a href="/login">Login</a></p>
+          
 
             <input type="submit" class="submitBtn" value="Sign up">
-
+            
         </form>
+        
     </div>
-    <a href="index.html" class="shadow btn-primary rounded-circle back-to-top" id="anim">
+
+   
+    <a href="/" class="shadow btn-primary rounded-circle back-to-top" id="anim">
         <i class="fas fa-home anim"></i>
       </a>
 </body>

@@ -1,16 +1,49 @@
 const express = require('express')
-const http = require('http')
-const bcrypt = require('bcrypt')
 const path = require('path')
-const bodyParser = require('body-parser')
-const users = require('./data').userDB
-
+const mysql = require('mysql')
 const app = express()
-const server = http.createServer(app);
+const dotenv = require('dotenv')
+const cookieParser = require('cookie-parser')
 
-app.use(express.static(path.join(__dirname,'./public')))
+dotenv.config({ path: './.env'})
 
+const db = mysql.createConnection({
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
+})
 
-app.listen(5000,()=>{
-    console.log('Server is listening at port 5000')
+const publicDirectory = path.join(__dirname, './public')
+app.use(express.static(publicDirectory))
+
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+app.use(cookieParser())
+app.set('view engine','hbs')
+
+db.connect((err)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("mysql connected");
+    }
+})
+
+//Defining routes
+app.use('/',require('./routes/pages'))
+app.use('/auth',require('./routes/auth'))
+
+app.get('/profile',(req,res)=>{
+    res.render('profile')
+})
+
+app.listen(3000,(err)=>{
+    if(err){
+        console.log(err);
+    }
+    else {
+        console.log('Server is listening at port 3000')
+    }
 })

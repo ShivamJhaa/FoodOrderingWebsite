@@ -4,7 +4,8 @@
   "description": "My food ordering Website",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass --watch scss:assets/css"
+    "compile:sass": "sass --watch scss:assets/css",
+    "start": "nodmeon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +16,15 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "autoprefixer": "^10.3.7",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^5.1.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.13",
     "postcss-cli": "^9.0.1"
   }

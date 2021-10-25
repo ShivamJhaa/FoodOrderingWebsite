@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/scss/font-awesome.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="/newcss/pstyle.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><div
+            class="logo"
+            style="font-size: 150%; font-family: 'Raleway';font-weight: 700; color: #fff;"
+          >Khana Khazana</div></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/login"
+              >Hello {{user.name}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/auth/logout">Logout</a>
+            </li>
+
+          </ul>
+          <button type="button" class="rounded-pill btn-rounded">Order Now
+            <span><i class="fas fa-phone-alt"></i></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="wrap">
+      <div class="right-menu">
+        <a class="active" href="#profile"><i class="fa fa-user"></i><span
+          >Profile</span></a>
+        <a href="#project"><i class="fa fa-photo"></i><span>Address</span></a>
+        <a href="#skills"><i class="fa fa-folder"></i><span>Orders</span></a>
+      </div>
+      <div class="content">
+        <div class="profile open animated zoomIn">
+          <div class="avatar">
+            <img src="/imgs/user.png" />
+            <div class="bubble">
+              <h3>{{user.name}}</h3>
+              <a href="#">{{user.email}}</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="project animated zoomIn">
+          <div class="avatar">
+
+            <div class="bubble">
+              <h3>Coming Soon</h3>
+              <a href="#">View Details </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="skills animated zoomIn">
+          <div class="avatar">
+
+            <div class="bubble">
+              <h3>Coming Soon</h3>
+              <a href="#">View Details </a>
+
+            </div>
+
+          </div>
+        </div>
+      </div><!--End Content-->
+      {{!-- <div class="footer">
+        <a href="http://www.arjunamgain.com.np/" target="_blank"><i
+            class="fa fa-link"
+          ></i><span>Website</span></a>
+        <a href="https://codepen.io/arjunamgain/" target="_blank"><i
+            class="fa fa-codepen"
+          ></i><span>My Pen</span></a>
+        <a href="https://twitter.com/arjunamgain" target="_blank"><i
+            class="fa fa-twitter"
+          ></i><span>Follow</span></a>
+        <a href="mailto:mr.arjunamgain@gmail.com" target="_blank"><i
+            class="fa fa-briefcase"
+          ></i><span>Hire me</span></a>
+      </div> --}}
+    </div>
+
+    <a href="/" class="shadow btn-primary rounded-circle back-to-top" id="anim">
+        <i class="fas fa-home"></i>
+      </a>
+
+    <script src="/public/newcss/pscript.js"></script>
+  </body>
+</html>

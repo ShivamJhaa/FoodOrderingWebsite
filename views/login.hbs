@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp-Form</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="scss/font-awesome.scss">
+    <title>Login-Form</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/scss/font-awesome.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
     <div class="signForm">
-        <form action="" class="form1">
+        <form action="/auth/login" class="form1" method="POST">
             <h1 class="display-5--title title">Login</h1>
 
             <div class="inputContainer">
-                <input type="text" class="input" id="username" name="username" required placeholder="a">
-                <label for="" class="label">Username</label>
+                <input type="email" class="input" id="email" name="email" required placeholder="a">
+                <label for="email" class="label">Email</label>
             </div>
             <div class="inputContainer">
                 <input type="password" class="input" id="password" name="password" placeholder="a" required>
-                <label for="" class="label">Password</label>
+                <label for="password" class="label">Password</label>
             </div>
 
-            <p>Don't have an Account <a href="signup.html">SignUp</a></p>
+            {{#if message }}
+            {{message}}
+            {{/if}}
+            <br>
+
+            <p>Don't have an Account <a href="/signup">SignUp</a></p>
 
             <input type="submit" class="submitBtn button" value="Login">
 
         </form>
     </div>
-    <a href="index.html" class="shadow btn-primary rounded-circle back-to-top" id="anim">
+    <a href="/" class="shadow btn-primary rounded-circle back-to-top" id="anim">
         <i class="fas fa-home"></i>
       </a>
 </body>

@@ -36,8 +36,18 @@ app.use('/',require('./routes/pages'))
 app.use('/auth',require('./routes/auth'))
 
 app.get('/profile',(req,res)=>{
+    
     res.render('profile')
 })
+app.get('/auth/logout', async (req, res) =>
+{
+    res.clearCookie('jwt');
+    res.redirect('/login')
+})
+// exports.logout = async (req,res) => {
+//     res.clearCookie('jwt');
+//     res.redirect('/login');
+// };
 
 app.listen(3000,(err)=>{
     if(err){

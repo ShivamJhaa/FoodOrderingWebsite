@@ -39,13 +39,14 @@ exports.signup = (req,res)=>{
                 console.log(err);
             }
             else{
-                res.render('signup',{
+                res.status(200).render('login',{
                     message: 'User Registered'
                 })
             }
         })
 })
 }
+
 exports.login = async (req,res)=>{
     try{
         const{email,password}=req.body
@@ -64,7 +65,7 @@ exports.login = async (req,res)=>{
                     message: 'Email or password is incorrect'
                 })
             } else {
-                const id = result[0].id
+                const id = result[0].email
                 const token = jwt.sign({id}, process.env.JWT_SECRET,{
                     expiresIn: process.env.JWT_EXPIRES_IN
                 })
@@ -95,7 +96,7 @@ exports.isLoggedIn = async (req,res,next)=>{
             //console.log(decode);
 
             //Check if the user still exits
-            db.query('SELECT * FROM users WHERE id = ?',[decode.id],(err,result)=>{
+            db.query('SELECT * FROM users WHERE email = ?',[decode.id],(err,result)=>{
                 //console.log(result)
 
                 if(!result){
@@ -117,3 +118,4 @@ exports.isLoggedIn = async (req,res,next)=>{
 
  
 }
+

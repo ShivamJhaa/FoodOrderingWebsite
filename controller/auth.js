@@ -88,13 +88,33 @@ exports.login = async (req,res)=>{
 }
 
 exports.isLoggedIn = async (req,res,next)=>{
-    console.log(req.cookies)
+    // console.log(req.cookies)
+
+    db.query('Select * from menu', (err, rows) =>
+            {
+            //When done with the connection, release it 
+            // connection.release();
+                // console.log("hello");
+                if (err)
+                {
+                    console.log(err);
+                    // res.render('home', { rows });
+                    
+                }
+                else
+                {
+                    req.data = rows
+                }
+                // console.log('The data from user table : \n', rows);
+            });
     if (req.cookies.jwt){
         try{
             //Verify the token
             const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET)
             //console.log(decode);
 
+            
+            
             //Check if the user still exits
             db.query('SELECT * FROM users WHERE email = ?',[decode.id],(err,result)=>{
                 //console.log(result)

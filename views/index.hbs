@@ -112,13 +112,28 @@
                   <button class="H3" id="port-btn" data-id="H3">HALL 3</button>
               </div>
           </div>
+          {{#if data}}
+          {{#each data}}
           <div  class="container">
               <div class="wrapper" id="projects">
-                  
+               
+                <div class="boxp">
+                <article class="proj-item">
+                <img src={{this.img}} id="pro-img">
+                </article>
+                <div class="pro-con">
+                <h6 class="item-head">{{this.title}}</h6>
+                <h5 class="item-text">${{this.price}}</h5>
+                <button type="button" class="secondary">Add</button>
+                </div>
+                </div>
+                
+
               </div>
 
           </div>
-              
+          {{/each}}
+          {{/if}}   
           </div>
           </div>
         </div>

@@ -16,9 +16,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: fit-content;
     @include gradient;
 }
+
+
 .form1{
     width: 400px;
     border-radius: 8px;

@@ -46,7 +46,28 @@ exports.signup = (req,res)=>{
         })
 })
 }
+exports.placeOrder = (req,res)=>{
+    const {
+        name,email,phone,address,title,price,category,qty
+    } = req.body
 
+    
+    const total = qty * price;
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+
+        db.query('INSERT INTO orders SET ? ',{cid: name, cemail:email, cphone: phone, caddress: address,order_date: dateTime, title: title, price: price,qty: qty, total: total, category: category},(err,result)=>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                return res.redirect('/corders');
+            }
+        })
+
+}
 exports.login = async (req,res)=>{
     try{
         const{email,password}=req.body
@@ -69,6 +90,10 @@ exports.login = async (req,res)=>{
                 const token = jwt.sign({id}, process.env.JWT_SECRET,{
                     expiresIn: process.env.JWT_EXPIRES_IN
                 })
+                // const nm = result[0].name
+                // const token2 = jwt.sign({nm}, process.env.JWT_SECRET,{
+                //     expiresIn: process.env.JWT_EXPIRES_IN
+                // })
                 //console.log('The token is' + token);
 
                 const cookieO = {
@@ -77,7 +102,14 @@ exports.login = async (req,res)=>{
                     ),
                     httpOnly: true
                 }
+                // const cookie1 = {
+                //     expires: new Date(
+                //         Date.now() + process.env.JWT_COOKIE_EXPIRES* 24 * 60 *60* 1000
+                //     ),
+                //     httpOnly: true
+                // }
                 res.cookie('jwt',token,cookieO)
+                // res.cookie('jwt',token2,cookie1)
                 res.status(200).redirect("/")
             }
         })
@@ -87,10 +119,37 @@ exports.login = async (req,res)=>{
     }
 }
 
+
+// exports.view =  (req, res) =>
+// {
+    
+       
+
+//         db.query('Select * from menu', (err, rows) =>
+//         {
+            
+
+//             if (!err)
+//             {
+//                 // res.render('home', { rows });
+//                 req.data = rows
+
+//             }
+//             else
+//             {
+//                 console.log(err);
+//             }
+//             console.log('The data from user table : \n', rows);
+//         });
+   
+// }
+
+
+
 exports.isLoggedIn = async (req,res,next)=>{
     // console.log(req.cookies)
 
-    db.query('Select * from menu', (err, rows) =>
+    db.query('Select * from menu where instock=?',["yes"] ,(err, rows) =>
             {
             //When done with the connection, release it 
             // connection.release();
@@ -138,4 +197,150 @@ exports.isLoggedIn = async (req,res,next)=>{
 
  
 }
+exports.checkFoodId = async (req,res,next)=>{
+    // console.log(req.cookies)
+    const { id } = req.body
+    // console.log(req.body);
+    db.query('Select * from menu where id=?' ,[id],async (err, rows) =>
+            {
+            //When done with the connection, release it 
+            // connection.release();
+                // console.log("hello");
+                if (err)
+                {
+                    console.log(err);
+                    // res.render('home', { rows });
+                    
+                }
+                else
+                {
+                    req.data = rows
+                }
+                console.log('The data from user table : \n', rows);
+            });
+    if (req.cookies.jwt){
+        try{
+            //Verify the token
+            const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET)
+            //console.log(decode);
 
+            
+            
+            //Check if the user still exits
+            db.query('SELECT * FROM users WHERE email = ?',[decode.id],(err,result)=>{
+                //console.log(result)
+
+                if(!result){
+                    return next();
+                }
+                req.user = result[0] 
+
+                return next()
+            })
+
+        }
+        catch(error){
+            console.log(error);
+            return next();
+        }
+    }else {
+        next();
+    }
+
+ 
+}
+exports.seeOrders = async (req, res, next) =>
+{
+    
+    if (req.cookies.jwt){
+        try{
+            //Verify the token
+            const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET)
+            console.log(decode);
+            
+            
+            //Check if the user still exits
+            db.query('SELECT * FROM orders WHERE cemail = ? order by id desc limit 20',[decode.id],(err,result)=>{
+                //console.log(result)
+                
+                if(!result){
+                    return next();
+                }
+                req.data = result
+                // req.user = decode.name;
+                console.log(req.data);
+                // console.log(req.user);
+                return next()
+            })
+
+        }
+        catch(error){
+            console.log(error);
+            return next();
+        }
+    }else {
+        next();
+    }
+    
+ 
+}
+exports.manageOrders = async (req, res, next) =>
+{
+    
+    if (req.cookies.jwt){
+        try{
+            //Verify the token
+            const decode = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET)
+            console.log(decode);
+            
+            
+            //Check if the user still exits
+            db.query('SELECT * FROM orders WHERE category = ? order by id desc ',[decode.id],(err,result)=>{
+                //console.log(result)
+                
+                if(!result){
+                    return next();
+                }
+                req.data = result
+                // req.user = decode.name;
+                console.log(req.data);
+                // console.log(req.user);
+                return next()
+            })
+
+        }
+        catch(error){
+            console.log(error);
+            return next();
+        }
+    }else {
+        next();
+    }
+    
+ 
+}
+
+exports.uOrders =  (req, res)=>{
+    
+    const {
+        id,
+        status
+    } = req.body
+
+    
+    
+
+        db.query(`Update orders SET status=? where id='${id}'`,[status],(err,result)=>{
+            if(err){
+                console.log(err);
+            }
+            else
+            {
+                console.log(result);
+                return res.redirect('/morders');
+            }
+        })
+        
+
+
+}

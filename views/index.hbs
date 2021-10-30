@@ -48,7 +48,7 @@
             {{/if}}
               
               <li class="nav-item">
-                <a class="nav-link" href="#menu">Menu</a>
+                <a class="nav-link" href="/menu">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
@@ -94,6 +94,7 @@
             </div>
           </div>
         </div>
+             
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,96C672,75,768,85,864,117.3C960,149,1056,203,1152,197.3C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
       </section>
 
@@ -111,14 +112,32 @@
                   <button class="H2" id="port-btn" data-id="H2">HALL 2</button>
                   <button class="H3" id="port-btn" data-id="H3">HALL 3</button>
               </div>
+          
           </div>
           <div  class="container">
               <div class="wrapper" id="projects">
-                  
+          {{#if data}}
+          {{#each data}}
+               
+                <div class="boxp">
+                <article class="proj-item">
+                <img src={{this.img}} id="pro-img">
+                </article>
+                <div class="pro-con">
+                <h6 class="item-head">{{this.title}}</h6>
+                <h5 class="item-text">&#8377;{{this.price}}</h5>
+                <form method="post" action="/menu">
+                <button type="submit" class="secondary">Order</button>
+                </form>
+                </div>
+                </div>
+                
+
+          {{/each}}
+          {{/if}}   
               </div>
 
           </div>
-              
           </div>
           </div>
         </div>

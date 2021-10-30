@@ -117,7 +117,10 @@ function displayProjects(projectsItems){
         <div class="pro-con">
         <h6 class="item-head">${item.price}</h6>
         <h5 class="item-text">${item.title}</h5>
-        <button type="button" class="secondary">Add</button>
+        <form method="post" action="/menu">
+        <button type="submit" class="secondary">Order</button>
+        </form>
+        
         </div>
         </div>`;
     });

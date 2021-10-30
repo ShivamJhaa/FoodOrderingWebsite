@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,12 +20,12 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+  <body style="width:100%; ">
+    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top" >
       <div class="container">
         <a class="navbar-brand" href="#"><div
             class="logo"
-            style="font-size: 150%; font-family: 'Raleway';font-weight: 700; color: #fff;"
+            style="font-size: 150%; font-family: 'Raleway';font-weight: 700; color: #fff; margin:20px;"
           >Khana Khazana</div></a>
         <button
           class="navbar-toggler"
@@ -49,92 +48,73 @@
                 class="nav-link active"
                 aria-current="page"
                 href="#"
-              >Hello {{user.name}}</a>
+              >Hello {{data.0.cid}}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./#menu">View Orders</a>
+              <a class="nav-link" href="/menu">Menu</a>
             </li>
-            {{!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="./#contact">Contact</a>
-            </li> --}}
+            </li>
              <li class="nav-item">
               <a class="nav-link" href="/auth/logout">Logout</a>
             </li>
 
           </ul>
-          {{!-- <button type="button" class="rounded-pill btn-rounded">Order Now
+          <button type="button" class="rounded-pill btn-rounded">Order Now
             <span><i class="fas fa-phone-alt"></i></span>
-          </button> --}}
+          </button>
         </div>
       </div>
     </nav>
+  
+    <div class="" style=" width:80%;height:fit-content; margin:120px auto;padding: 12px; background-color:bisque">
+     
+        <h3 class="title">Order Details</h3>
+            
+        
+           
+            
+      
+           
+                <table class="table" >
+                  <tr>
+                    <th>Order-date</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                  </tr>
+                  {{#if data}}
+    {{#each data}}
+                  <tr >
+                    <td>{{this.order_date}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.qty}}</td>
+                    <td>{{this.total}}</td>
+                    <td>{{this.status}}</td>
+                  </tr>
+{{/each}}
+    {{/if}}
+                </table>
+  
+                
+                
     
-    <div class="wrap">
-      <div class="right-menu">
-        <a class="active" href="#profile"><i class="fa fa-user"></i><span
-          >Profile</span></a>
-        <a href="#project"><i class="fa fa-photo"></i><span>Address</span></a>
-        <a href="/morders"><i class="fa fa-folder"></i><span>Orders</span></a>
-      </div>
-      <div class="content">
-        <div class="profile open animated zoomIn">
-          <div class="avatar">
-            <img src="/imgs/user.png" />
-            <div class="bubble">
-              <h3>{{user.name}}</h3>
-              <a href="#">{{user.email}}</a>
-              {{!-- <a href="#">{{user.address}}</a> --}}
-            </div>
-
-          </div>
-        </div>
-        <div class="project animated zoomIn">
-          <div class="avatar">
-
-            <div class="bubble">
-              <h3>Coming Soon</h3>
-              <a href="#">View Details </a>
-
-            </div>
-
-          </div>
-        </div>
-
-        <div class="skills animated zoomIn">
-          <div class="avatar">
-
-            <div class="bubble">
-              <h3>Coming Soon</h3>
-              <a href="#">View Details </a>
-
-            </div>
-
-          </div>
-        </div>
-      </div><!--End Content-->
-      {{!-- <div class="footer">
-        <a href="http://www.arjunamgain.com.np/" target="_blank"><i
-            class="fa fa-link"
-          ></i><span>Website</span></a>
-        <a href="https://codepen.io/arjunamgain/" target="_blank"><i
-            class="fa fa-codepen"
-          ></i><span>My Pen</span></a>
-        <a href="https://twitter.com/arjunamgain" target="_blank"><i
-            class="fa fa-twitter"
-          ></i><span>Follow</span></a>
-        <a href="mailto:mr.arjunamgain@gmail.com" target="_blank"><i
-            class="fa fa-briefcase"
-          ></i><span>Hire me</span></a>
-      </div> --}}
+           <br>
+             
     </div>
+
 
     <a href="/" class="shadow btn-primary rounded-circle back-to-top" id="anim">
         <i class="fas fa-home"></i>
       </a>
 
-    <script src="/public/newcss/pscript.js"></script>
+    {{!-- <script src="./public/newcss/pscripta.js"></script> --}}
   </body>
 </html>

@@ -5,6 +5,15 @@ const app = express()
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 
+
+var hbs = require('hbs');
+app.set('view engine', 'hbs');
+
+hbs.registerHelper('select', function(selected, options) {
+    return options.fn(this).replace(
+        new RegExp(' value=\"' + selected + '\"'),
+        '$& selected="selected"');
+});
 dotenv.config({ path: './.env'})
 
 const db = mysql.createConnection({
@@ -30,6 +39,10 @@ db.connect((err)=>{
         console.log("mysql connected");
     }
 })
+// app.get('/', function (req, res)
+// {
+    
+// })
 
 //Defining routes
 app.use('/',require('./routes/pages'))

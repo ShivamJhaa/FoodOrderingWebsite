@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/scss/font-awesome.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body">
+    <br>
+    
+    <br>
+
+    <div class="signForm">
+        <form action="/porder" method="POST" class="form1">
+            <h1 class="display-5--title title">Order</h1>
+            {{#if user }}
+            <h3 class=" ">Customer Details</h3>
+             {{!-- <div class="inputContainer"> --}}
+                {{!-- <label for="name" class="label">Name</label> --}}
+            {{!-- </div> --}}
+                <input hidden type="text" class="input"   name="name"  placeholder="a" value="{{user.name}}">
+                <div>Name : {{user.name}}</div>
+                <input hidden type="email" class="input"   name="email"  placeholder="a" value="{{user.email}}">
+                <div>Name : {{user.email}}</div>
+                <input hidden type="text" class="input"   name="phone"  placeholder="a" value="{{user.phone}}">
+                <div>Contact : {{user.phone}}</div>
+                <input hidden type="text" class="input"   name="address"  placeholder="a" value="{{user.address}}">
+                
+                <span>Address : {{user.address}}</span>
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            {{!-- <div class="inputContainer">
+                <input type="email" class="input" id="email" name="email" required placeholder="a">
+                <label for="email" class="label">Email</label>
+            </div>
+              --}}
+            {{/if}}
+            <br>
+            <br>
+            {{#if data }}
+            {{#each data}}
+            <h3 class=" ">Order Details</h3>
+            <br>
+                <input hidden type="text" class="input"   name="title"  placeholder="a"value="{{this.title}}">
+                <div>Item : {{this.title}}</div>
+                <input hidden type="text" class="input"   name="price"  placeholder="a"value="{{this.price}}">
+                <div>Email : {{this.price}}</div>
+                <input hidden type="text" class="input"   name="category"  placeholder="a"value="{{this.category}}">
+                <div>Canteen id : {{this.category}}</div>
+                <br>
+                <div class="inputContainer">
+                <input type="number" class="input"  id="qty" name="qty" value="1"  placeholder="a"value="">
+                <label for="qty" class="label">Qty.</label>
+            </div>
+                
+                
+            {{/each}}
+            {{/if}}
+             
+           
+              
+            
+            
+            <br>
+             
+            
+
+            
+          
+
+            <input type="submit" class="submitBtn" value="Order">
+           <br> 
+        </form>
+        
+    </div>
+
+   
+    <a href="/" class="shadow btn-primary rounded-circle back-to-top" id="anim">
+        <i class="fas fa-home anim"></i>
+      </a>
+</body>
+</html>

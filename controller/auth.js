@@ -13,7 +13,7 @@ const db = mysql.createConnection({
 
 exports.signup = (req,res)=>{
     const {
-        name,email,phone,password,cpassword
+        name,email,phone,password,cpassword,address
     } = req.body
 
     db.query('SELECT email FROM users WHERE email = ?',[email],async (err,result)=>{
@@ -34,7 +34,7 @@ exports.signup = (req,res)=>{
         let hpassword = await bcrypt.hash(password,8)
         console.log(hpassword)
 
-        db.query('INSERT INTO users SET ? ',{name: name, email: email, phone: phone, password: hpassword},(err,result)=>{
+        db.query('INSERT INTO users SET ? ',{name: name, email: email, phone: phone, password: hpassword,address:address},(err,result)=>{
             if(err){
                 console.log(err);
             }
